@@ -33,7 +33,7 @@ pipeline {
             }
             steps {
                 echo '=== Building Petclinic Docker Image ==='
-                sh "docker build . -t OleksandrMykhalchenko/petclinic:${DOCKER_TAG}" 
+                sh "docker build . -t oleksandrmykhalchenko/petclinic:${DOCKER_TAG}" 
             }
         }
         stage('Push Docker Image') {
