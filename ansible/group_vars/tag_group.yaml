@@ -1,3 +1,3 @@
-ansible_ssh_private_key_file: /var/lib/jenkins/.ssh/main.pem
+ansible_ssh_private_key_file: home/ubuntu/.ssh/mainkey.pem
 ansible_user: ubuntu
 Env: Deploy
