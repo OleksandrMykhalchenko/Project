@@ -3,11 +3,9 @@
   become: True
   tasks:
     - name: Install python pip
-      sudo:
         name: python-pip3
         state: present
     - name: Install docker
-      sudo:
         name: docker
         state: present
     - name: start docker
