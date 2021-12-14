@@ -1,5 +1,5 @@
 ---
-- hosts: tag_group
+- hosts: deploy
   become: True
   tasks:
     - name: Install python pip
