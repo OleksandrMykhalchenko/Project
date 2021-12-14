@@ -14,9 +14,9 @@
       apt:
         name: docker
         state: present
-    - name: reload systemd
-        sudo: yes
-          command: systemctl daemon-reload
+    - name: Reload the systemd daemon
+      systemd:
+        daemon_reload: yes
     - name: Start docker
       service:
         name: docker
