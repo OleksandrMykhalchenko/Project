@@ -5,7 +5,8 @@ ansible_user: ubuntu
 regions:
   - us-east-1
 strict: False
-filters:
-  tag:Env: Deploy
+keyed_groups:
+  - key: Env
+    prefix: Env
 compose:
   ansible_host: ip_address
