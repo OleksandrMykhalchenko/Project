@@ -5,7 +5,7 @@ ansible_user: ubuntu
 regions:
   - us-east-1
 strict: False
-filter:
-  Env: Deploy
+filters:
+  tag:Env: Deploy
 compose:
   ansible_host: ip_address
