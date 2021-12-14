@@ -17,6 +17,7 @@
     - name: Start docker
       service:
         name: docker
+        daemon_reload: yes
         state: started
         enabled: yes
     - name: Install docker-py
