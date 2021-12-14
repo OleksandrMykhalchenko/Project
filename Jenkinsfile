@@ -54,6 +54,8 @@ pipeline {
             steps {
                 ansiblePlaybook( 
                     playbook: 'ansible/deploy.yaml',
+                    inventory: 'ansible/deploy.inv', 
+                    credentialsId: 'mainkey',
                     installation: 'ansible', 
                     extras: "-e DOCKER_TAG=${DOCKER_TAG}",
                     colorized: true) 
