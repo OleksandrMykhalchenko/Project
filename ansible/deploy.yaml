@@ -16,7 +16,7 @@
         state: present
     - name: Ensure docker launches on boot
         become: yes
-        command: systemctl enable docker
+          command: systemctl enable docker
     - name: Install docker-py
       pip:
         name: docker-py
