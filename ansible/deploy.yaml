@@ -1,10 +1,8 @@
 ---
-- name: Deployment Playbook
-  hosts: _Deploy
+- hosts: _Deploy
   become: yes
   vars_files:
     - vars/default.yaml
-  ansible_ssh_private_key_file:"{{ mainkey }}"
   tasks:
   - name: Install aptitude using apt
     apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
