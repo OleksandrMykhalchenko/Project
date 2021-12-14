@@ -2,16 +2,19 @@
 - hosts: deploy
   become: True
   tasks:
-    - name: Install pip
+    - name: Download setuptools
       apt:
-        name: python-pip
-        update_cache: yes
+        name: python-setuptools
         state: present
+   - name: Install pip
+     easy_install:
+       name: pip
+       state: present
     - name: Install docker
       apt:
         name: docker
         state: present
-    - name: start docker
+    - name: Start docker
       service:
         name: docker
         state: started
