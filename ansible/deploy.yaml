@@ -2,12 +2,12 @@
 - hosts: deploy
   become: True
   tasks:
-    - name: Download setuptools
-      apt:
+     - name: Download setuptools
+       apt:
         name: python-setuptools
         state: present
-   - name: Install pip
-     easy_install:
+    - name: Install pip
+      easy_install:
         name: pip
         state: present
     - name: Install docker
