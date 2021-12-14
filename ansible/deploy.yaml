@@ -14,6 +14,8 @@
       apt:
         name: docker
         state: present
+    - name: Ensure docker starts on boot
+      shell: systemctl start docker.service
     - name: Ensure docker launches on boot
       shell: systemctl enable docker.service
     - name: Install docker-py
