@@ -49,7 +49,6 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                sh "bash ansible/hostsgen.sh"
                 ansiblePlaybook( 
                     playbook: 'ansible/deploy.yaml',
                     installation: 'ansible', 
