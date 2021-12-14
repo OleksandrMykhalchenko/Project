@@ -23,7 +23,7 @@
       state: present
 
   - name: Install Docker
-    apt: name={{ docker_packges }} state=latest update_cache=yes
+    apt: name={{ docker_packages }} state=latest update_cache=yes
 
   - name: Install Python Docker module
     pip:
