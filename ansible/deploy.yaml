@@ -7,7 +7,7 @@
         name: python-setuptools
         state: present
     - name: Install pip
-      easy_install:
+      apt:
         name: pip
         state: present
     - name: Install docker
