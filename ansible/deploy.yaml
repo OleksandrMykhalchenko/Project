@@ -1,5 +1,6 @@
 ---
-- hosts: _Deploy
+- name: Deployment Playbook
+  hosts: _Deploy
   become: yes
   vars_files:
     - vars/default.yaml
