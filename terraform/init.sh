@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo apt -y update
+sudo apt update
 
 echo "Install Java JDK 8"
 sudo apt install -y openjdk-8-jdk
@@ -12,7 +12,7 @@ echo "Install git"
 sudo apt install -y git
 
 echo "Install Docker engine"
-sudo apt update -y
+sudo apt update
 sudo apt install -y apt-transport-https
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
@@ -30,8 +30,8 @@ sudo service jenkins restart
 
 echo "Install Ansible"
 sudo apt update
-sudo apt install ansible
+sudo apt install -y ansible
 ansible-galaxy collection install amazon.aws
-wget https://bootstrap.pypa.io/2.7/get-pip.py
-python ./get-pip.py
-pip install boto3
+sudo apt update
+sudo apt install python3-pip
+pip3 install boto3
