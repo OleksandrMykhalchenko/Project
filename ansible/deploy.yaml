@@ -6,6 +6,13 @@
       apt: 
         name: python3-pip
         state: present
+    - name: Install python pip
+      apt:
+        name: python3-pip
+        install_recommends: no
+        state: latest
+        tags:
+          - pip
     - name: Install docker
       apt:
         name: docker
