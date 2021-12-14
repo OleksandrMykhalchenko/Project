@@ -1,10 +1,11 @@
 plugin: aws_ec2
 boto_profile: DevOpsUser
+ansible_ssh_private_key_file: home/ubuntu/.ssh/mainkey.pem
+ansible_user: ubuntu
 regions:
   - us-east-1
 strict: False
-keyed_groups:
-  - prefix: tag
-    key: 'tags'
+filter:
+  Env: Deploy
 compose:
   ansible_host: ip_address
