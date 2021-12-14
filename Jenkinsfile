@@ -51,7 +51,6 @@ pipeline {
             steps {
                 ansiblePlaybook( 
                     playbook: 'ansible/deploy.yaml',
-                    credentialsId: 'mainkey',
                     installation: 'ansible', 
                     extras: "-e DOCKER_TAG=${DOCKER_TAG}") 
             }
