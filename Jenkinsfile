@@ -56,6 +56,7 @@ pipeline {
                     playbook: 'ansible/deploy.yaml',
                     inventory: 'ansible/deploy.inv', 
                     credentialsId: 'mainkey',
+                    disableHostKeyChecking: true,
                     installation: 'ansible', 
                     extras: "-e DOCKER_TAG=${DOCKER_TAG}",
                     colorized: true) 
