@@ -1,5 +1,6 @@
 ---
 admin_user: ubuntu
+mainkey: home/ubuntu/.ssh/mainkey.pem
 docker_required_packages:
   - "apt-transport-https"
   - "ca-certificates"
@@ -10,7 +11,7 @@ docker_required_packages:
   - "python3-setuptools"
 docker_gpg_url: https://download.docker.com/linux/ubuntu/gpg
 docker_repo: deb https://download.docker.com/linux/ubuntu focal stable
-docker_packges:
+docker_packages:
   - "docker-ce"
   - "docker-ce-cli"
   - "containerd.io"
