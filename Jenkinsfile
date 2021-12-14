@@ -1,4 +1,7 @@
 pipeline {
+    options {
+    buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30'))
+    }
     agent any
     environment {
       DOCKER_TAG = getVersion()
@@ -48,7 +51,7 @@ pipeline {
             steps {
                 ansiblePlaybook( 
                     playbook: 'ansible/deploy.yaml',
-                    inventory: 'ansible/deploy.inv', 
+                    dynamicInventory: 'ansible/aws_ec2.yaml', 
                     credentialsId: 'mainkey',
                     disableHostKeyChecking: true,
                     installation: 'ansible', 
