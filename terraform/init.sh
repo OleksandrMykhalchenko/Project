@@ -24,6 +24,14 @@ echo "Install Jenkins"
 wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
 sudo sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
 sudo apt update
-sudo apt install -y jenkins
+sudo usermod -a -G jenkins ubuntu
 sudo usermod -a -G docker jenkins
 sudo service jenkins restart
+
+echo "Install Ansible"
+sudo apt update
+sudo apt install ansible
+ansible-galaxy collection install amazon.aws
+wget https://bootstrap.pypa.io/2.7/get-pip.py
+python ./get-pip.py
+pip install boto3
