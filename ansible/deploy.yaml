@@ -14,14 +14,9 @@
       apt:
         name: docker
         state: present
-    - name: Reload the systemd daemon
-      systemd:
-        daemon_reload: yes
-    - name: Start docker
-      service:
-        name: docker
-        state: started
-        enabled: yes
+    - name: Ensure docker launches on boot
+        become: yes
+        command: systemctl enable docker
     - name: Install docker-py
       pip:
         name: docker-py
