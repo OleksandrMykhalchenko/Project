@@ -23,7 +23,10 @@
       apt:
         name: docker-ce
         state: present
-    - name: start docker
+    - name: reload systemd
+      sudo: yes
+        command: systemctl daemon-reloa
+    - name: Start docker
       service:
         name: docker-ce
         state: started
