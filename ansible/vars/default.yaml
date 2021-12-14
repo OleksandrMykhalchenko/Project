@@ -1,6 +1,5 @@
 ---
 admin_user: ubuntu
-mainkey: home/ubuntu/.ssh/mainkey.pem
 docker_required_packages:
   - "apt-transport-https"
   - "ca-certificates"
