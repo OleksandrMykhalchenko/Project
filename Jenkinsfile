@@ -44,12 +44,6 @@ pipeline {
                 sh "docker push oleksandrmykhalchenko/petclinic:${DOCKER_TAG}"
             }
         }
-        stage('Remove local images') {
-            steps {
-                echo '=== Delete the local docker images ==='
-                sh "docker rmi -f oleksandrmykhalchenko/petclinic:${DOCKER_TAG}"
-            }
-        }
         stage ('Deploy') {
             steps {
                 ansiblePlaybook( 
@@ -58,8 +52,13 @@ pipeline {
                     credentialsId: 'mainkey',
                     disableHostKeyChecking: true,
                     installation: 'ansible', 
-                    extras: "-e DOCKER_TAG=${DOCKER_TAG}",
-                    colorized: true) 
+                    extras: "-e DOCKER_TAG=${DOCKER_TAG}") 
+            }
+        }
+        stage('Remove local images') {
+            steps {
+                echo '=== Delete the local docker images ==='
+                sh "docker rmi -f oleksandrmykhalchenko/petclinic:${DOCKER_TAG}"
             }
         }
     }
