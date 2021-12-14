@@ -25,7 +25,8 @@
         state: present
     - name: Start docker
       service:
-        name: docker-ce
+        sudo: yes
+        name: docker
         state: started
         enabled: yes
     - name: Install docker-py
