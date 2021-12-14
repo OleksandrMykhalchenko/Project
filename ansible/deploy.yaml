@@ -12,12 +12,13 @@
         state: present
     - name: Install docker
       apt:
-        name: docker
+        name: docker-ce
         state: present
-    - name: Ensure docker starts on boot
-      shell: systemctl start docker.service
-    - name: Ensure docker launches on boot
-      shell: systemctl enable docker.service
+    - name: start docker
+      service:
+        name: docker-ce
+        state: started
+        enabled: yes
     - name: Install docker-py
       pip:
         name: docker-py
