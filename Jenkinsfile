@@ -50,13 +50,7 @@ pipeline {
         stage ('Deploy') {
             steps {
                 sh "ansible-inventory --graph -i aws_ec2.yaml | sed -n -e '/compute/ s/.*\-- *//p' >hosts"
-            }
-            {
-                ansiblePlaybook( 
-                    playbook: 'ansible/deploy.yaml',
-                    installation: 'ansible', 
-                    extras: "-e DOCKER_TAG=${DOCKER_TAG}") 
-            }
+              }
         }
         stage('Remove local images') {
             steps {
