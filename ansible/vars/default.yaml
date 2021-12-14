@@ -1,5 +1,6 @@
 ---
 admin_user: ubuntu
+ansible_ssh_private_key_file: home/ubuntu/.ssh/mainkey.pem
 docker_required_packages:
   - "apt-transport-https"
   - "ca-certificates"
