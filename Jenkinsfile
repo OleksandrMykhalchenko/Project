@@ -52,7 +52,11 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                ansiblePlaybook, extras: "-e DOCKER_TAG=${DOCKER_TAG}", installation: 'ansible', playbook: 'ansible/deploy.yaml'
+                ansiblePlaybook( 
+                    playbook: 'ansible/deploy.yaml',
+                    installation: 'ansible', 
+                    extras: "-e DOCKER_TAG=${DOCKER_TAG}",
+                    colorized: true) 
             }
         }
     }
