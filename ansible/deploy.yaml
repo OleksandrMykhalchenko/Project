@@ -1,6 +1,8 @@
 ---
 - hosts: Deploy
   become: yes
+  vars:
+    ansible_ssh_private_key_file: "/home/ec2-user/tyler.pem"
   vars_files:
     - vars/default.yaml
 
