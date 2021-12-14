@@ -2,8 +2,8 @@
 - hosts: deploy
   become: True
   tasks:
-     - name: Download setuptools
-       apt:
+    - name: Download setuptools
+      apt:
         name: python-setuptools
         state: present
     - name: Install pip
