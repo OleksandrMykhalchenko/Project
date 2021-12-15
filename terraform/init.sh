@@ -33,5 +33,5 @@ sudo apt update
 sudo apt install -y ansible
 ansible-galaxy collection install amazon.aws
 sudo apt update
-sudo apt install python3-pip
+sudo apt -y install python3-boto3
 pip3 install boto3
