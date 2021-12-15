@@ -1,5 +1,6 @@
 ---
-- hosts: dynamic_aws_ec2
+- name: deploy
+  hosts: tag_Deploy
   become: yes
   vars_files:
     - vars/default.yaml
