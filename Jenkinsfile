@@ -51,8 +51,8 @@ pipeline {
             steps {
                 ansiblePlaybook( 
                     credentialsId: 'mainkey',
-                    disableHostKeyChecking: true
-                    installation: 'ansible',
+                    disableHostKeyChecking: true,
+                    installation: 'Defauly',
                     inventory: 'ansible/dynamic_aws_ec2.yaml',
                     extras: '-e DOCKER_TAG=${DOCKER_TAG}', 
                     playbook: 'ansible/deploy.yaml')
