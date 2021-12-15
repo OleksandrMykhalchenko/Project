@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: dynamic.aws_ec2
   become: yes
   vars_files:
     - ansible/vars/default.yaml
