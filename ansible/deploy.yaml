@@ -1,6 +1,7 @@
 ---
 - name: deploy
   hosts: tag_Deploy
+  remote_user: ubuntu
   become: yes
   vars_files:
     - vars/default.yaml
