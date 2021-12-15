@@ -3,7 +3,7 @@ regions:
   - "us-east-1"
 strict: False
 filters:
-  tag:Env: _Deploy
+  tag:Env: Deploy
   instance-state-name : running
 compose:
   ansible_host: ip_address
