@@ -1,8 +1,8 @@
 ---
-- hosts: dynamic.aws_ec2
+- hosts: dynamic_aws_ec2
   become: yes
   vars_files:
-    - ansible/vars/default.yaml
+    - vars/default.yaml
   tasks:
   - name: Install aptitude using apt
     apt: name=aptitude state=latest update_cache=yes force_apt_get=yes
