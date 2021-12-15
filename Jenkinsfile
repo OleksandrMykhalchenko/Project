@@ -49,10 +49,13 @@ pipeline {
         }
         stage ('Deploy') {
             steps {
-                ansiblePlaybook( 
-                    playbook: 'ansible/deploy.yaml',
-                    installation: 'ansible', 
-                    extras: "-e DOCKER_TAG=${DOCKER_TAG}") 
+                ansiblePlaybook(
+                    colorized: true, 
+                    credentialsId: 'mainkey', 
+                    installation: 'Default', 
+                    inventory: 'ansible/inventory/dynamic.aws_ec2.yml',
+                    extras: '-e DOCKER_TAG=${DOCKER_TAG}', 
+                    playbook: 'ansible/playbook/deploy.yaml')
             }
         }
         stage('Remove local images') {
