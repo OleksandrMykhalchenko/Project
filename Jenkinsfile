@@ -53,7 +53,6 @@ pipeline {
                     colorized: true, 
                     credentialsId: 'mainkey', 
                     installation: 'Default', 
-                    inventory: 'ansible/dynamic_aws_ec2',
                     extras: '-e DOCKER_TAG=${DOCKER_TAG}', 
                     playbook: 'ansible/deploy.yaml')
             }
