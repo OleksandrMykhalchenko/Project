@@ -88,3 +88,17 @@ resource "aws_security_group" "sg_allow_ssh_jenkins" {
     output "deployment_ip_address" {
     value = "${aws_instance.deployment-instance.public_dns}"
   }
+
+resource "aws_instance" "development-instance" {
+  ami             = "${var.instance_ami}"
+  instance_type   = "${var.instance_type_deploy}"
+  key_name        = "${var.keyname}"
+  vpc_security_group_ids = ["${aws_security_group.sg_allow_ssh_deployment.id}"]
+  subnet_id          = "${aws_subnet.public-subnet-1.id}"
+  associate_public_ip_address = true
+
+  tags = {
+    Name = "Development-Instance"
+    Env = "Develop"
+  }
+}
