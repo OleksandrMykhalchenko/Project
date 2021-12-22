@@ -1,6 +1,6 @@
 ---
 - name: deploy
-  hosts: tag_Deploy
+  hosts: tag_Develop
   become: yes
   vars_files:
     - vars/default.yaml
