@@ -33,7 +33,7 @@ pipeline {
         }
                 stage('Build Docker Image') {
             when {
-                branch 'master'
+                branch 'develop'
             }
             steps {
                 echo '=== Building Petclinic Docker Image ==='
@@ -42,7 +42,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             when {
-                branch 'master'
+                branch 'develop'
             }
             steps{
                 withCredentials([string(credentialsId: 'dockerHubCredentials', variable: 'dockerHubPwd')]) {
