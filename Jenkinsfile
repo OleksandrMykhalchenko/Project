@@ -3,10 +3,6 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '30', artifactNumToKeepStr: '30'))
     }
     agent any
-    tools {
-        maven 'Maven 3.6.3'
-        jdk 'jdk8'
-    }
     environment {
       DOCKER_TAG = getVersion()
     }
